@@ -71,7 +71,6 @@ public class CalcActivity extends AppCompatActivity implements View.OnClickListe
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_calc);
         //从布局文件中获取显示结果的TextView
-//        tv_result = findViewById(R.id.tv_result);
         tv_result = findViewById(R.id.tv_result);
         findViewById(R.id.btn_cancel).setOnClickListener(this);
         findViewById(R.id.btn_divide).setOnClickListener(this); // “除法”按钮
