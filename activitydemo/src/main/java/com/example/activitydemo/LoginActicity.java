@@ -38,9 +38,12 @@ public class LoginActicity extends AppCompatActivity implements RadioGroup.OnChe
     private RadioButton rb_verifycode;
     private ActivityResultLauncher<Intent> register;
     private Button btn_login;
-    private String mPassword = "111111";
+    private String strPassword = "111111";
+    private int iVerifyCode;
+
     private String mVerifyCode;
 
+    private String mPassword;
 
 
     @Override
