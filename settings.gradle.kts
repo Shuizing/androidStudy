@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 rootProject.name = "My Application"
 include(":app")
 include(":activitydemo")
+include(":servicedemo")
+include(":contentdemo")
