@@ -12,7 +12,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/activitydemo" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/broadcast" />
             <option value="$PROJECT_DIR$/contentdemo" />
+            <option value="$PROJECT_DIR$/getbroadcast" />
             <option value="$PROJECT_DIR$/servicedemo" />
           </set>
         </option>
