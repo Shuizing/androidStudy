@@ -16,6 +16,7 @@ public class StudentDao {
     private DBHelper dbHelper;
     public StudentDao(Context context) {
         dbHelper = new DBHelper(context);
+
     }
 
     // 插入一条数据
@@ -25,6 +26,17 @@ public class StudentDao {
         values.put("name", name);
         values.put("classmate", classmate);
         values.put("age", age);
+        database.insert("t_student", null, values);
+        database.close();
+    }
+
+
+    public void insert(Student student) {
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", student.getName());
+        values.put("classmate", student.getClassmate());
+        values.put("age", student.getAge());
         database.insert("t_student", null, values);
         database.close();
     }
@@ -39,6 +51,20 @@ public class StudentDao {
         values.put("classmate", classmate);
         values.put("age", age);
         database.update("t_student", values, "_id=?", new String[]{"1"});
+        database.close();
+    }
+
+
+    // 修改数据
+    public void update(Student student) {
+        // 通过dbHelper对象获取数据库对象
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
+        // 封装数据
+        ContentValues values = new ContentValues();
+        values.put("name", student.getName());
+        values.put("classmate", student.getClassmate());
+        values.put("age", student.getAge());
+        database.update("t_student", values, "_id=?", new String[]{String.valueOf(student.get_id())});
         database.close();
     }
 

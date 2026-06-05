@@ -36,7 +36,7 @@ public class StudentAdpter extends RecyclerView.Adapter<StudentAdpter.ViewHolder
         Student student = datas.get(position);
         holder.nameItem.setText(student.getName());
         holder.classmateItem.setText(student.getClassmate());
-        holder.ageItem.setText(student.getAge());
+        holder.ageItem.setText(String.valueOf(student.getAge()));
         holder.itemView.setTag(position);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +47,13 @@ public class StudentAdpter extends RecyclerView.Adapter<StudentAdpter.ViewHolder
                 }
             }
         });
+
+        holder.itemView.setSelected(position == selectedIndex);
+
+
+
+
+
     }
 
     @Override
@@ -61,6 +68,15 @@ public class StudentAdpter extends RecyclerView.Adapter<StudentAdpter.ViewHolder
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
+
+    //设置选中的成员
+    private int selectedIndex;
+
+    public void setSelectedIndex(int position){
+        this.selectedIndex = position;
+        notifyDataSetChanged();
+    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameItem;

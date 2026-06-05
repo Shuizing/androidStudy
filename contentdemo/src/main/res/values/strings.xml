@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">contentdemo</string>
+    <string-array name="student_arry">
+        <item>一班</item>
+        <item>二班</item>
+        <item>三班</item>
+        <item>四班</item>
+    </string-array>
 </resources>
