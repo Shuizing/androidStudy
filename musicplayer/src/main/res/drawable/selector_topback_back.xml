@@ -7,7 +7,7 @@
         </layer-list>
     </item>
 
-    <item android:state_disabled="true">
+    <item android:state_enabled="false">
         <layer-list>
             <item android:drawable="@drawable/list_topbar_back_d"/>
         </layer-list>

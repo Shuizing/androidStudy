@@ -15,8 +15,7 @@
             android:id="@+id/bg_image"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:src="@drawable/buttonbar_area"
-            android:scaleType="fitXY" />
+            android:src="@drawable/buttonbar_area" />
 
         <!-- 2. 上层：放置4个透明按钮 -->
         <LinearLayout
