@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/song_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <!-- 左侧：播放/音符图标 -->
+    <ImageView
+        android:id="@+id/iv_play_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/list_icon_music" />
+
+    <!-- 中间：歌名 -->
+    <TextView
+        android:id="@+id/tv_song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="50dp"
+        android:text="songtile"
+        android:maxWidth="200dp"
+        android:singleLine="true"
+        android:textColor="#646464"
+        android:textSize="21sp" />
+
+
+    <!-- 右侧：收藏按钮 -->
+    <ImageButton
+        android:id="@+id/btn_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:paddingRight="10dp"
+        android:src="@drawable/list_icon_collect_2" />
+
+    <!-- 当前播放高亮条（默认隐藏，当前播放时显示） -->
+    <View
+        android:id="@+id/view_playing_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="#00D4E8"
+        android:visibility="gone" />
+
+</RelativeLayout>

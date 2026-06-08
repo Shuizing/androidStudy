@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    tools:context=".NavigationBarFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 1. 底层：放置整张背景图 -->
+        <ImageView
+            android:id="@+id/bg_image"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:src="@drawable/buttonbar_area"
+            android:scaleType="fitXY" />
+
+        <!-- 2. 上层：放置4个透明按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_setup"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_background"
+                android:src="@drawable/selector_setup_icon"
+                android:scaleType="centerInside"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:id="@+id/btn_id3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_background"
+                android:src="@drawable/selector_id3_icon"
+                android:scaleType="centerInside"
+                android:padding="10dp" />
+
+
+            <ImageButton
+                android:id="@+id/btn_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_background"
+                android:src="@drawable/selector_list_icon"
+                android:scaleType="centerInside"
+                android:padding="10dp" />
+
+
+
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_eq"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/volume_slider_bg" />-->
+
+            <ImageButton
+                android:id="@+id/btn_eq"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_background"
+                android:src="@drawable/selector_eq_icon"
+                android:scaleType="centerInside"
+                android:padding="10dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

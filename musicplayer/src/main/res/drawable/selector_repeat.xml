@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 按下状态 -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:drawable="@drawable/id3_icon_repeat_p" />
+        </layer-list>
+    </item>
+
+    <!-- 禁用状态 -->
+    <item android:state_enabled="false">
+        <layer-list>
+            <item android:drawable="@drawable/id3_icon_repeat_d" />
+        </layer-list>
+    </item>
+
+    <!-- 默认状态 -->
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/id3_icon_repeat_n" /> <!-- 图标 -->
+        </layer-list>
+    </item>
+</selector>

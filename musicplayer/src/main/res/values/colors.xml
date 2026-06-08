@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="teal_500">#00BCD4</color>
+    <color name="teal_700">#009688</color>
+    <color name="gray">#BDBDBD</color>
+
+    <color name="song_tile">#282828</color>
+    <color name="song_album">#505050</color>
+    <color name="song_time">#282828</color>
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:drawable="@drawable/list_topbar_back_p"/>
+        </layer-list>
+    </item>
+
+    <item android:state_disabled="true">
+        <layer-list>
+            <item android:drawable="@drawable/list_topbar_back_d"/>
+        </layer-list>
+    </item>
+
+    <item >
+        <layer-list>
+            <item android:drawable="@drawable/list_topbar_back_n"/>
+        </layer-list>
+    </item>
+
+</selector>

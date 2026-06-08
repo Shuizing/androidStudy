@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 聚焦状态 -->
+    <item android:state_focused="true">
+        <layer-list>
+            <item android:drawable="@drawable/buttonbar_icon_id3_f" />
+        </layer-list>
+    </item>
+
+    <!-- 禁用状态 -->
+    <item android:state_enabled="false">
+        <layer-list>
+            <item android:drawable="@drawable/buttonbar_icon_id3_d" />
+        </layer-list>
+    </item>
+
+    <!-- 默认状态 -->
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/buttonbar_icon_id3_n" /> <!-- 图标 -->
+        </layer-list>
+    </item>
+</selector>

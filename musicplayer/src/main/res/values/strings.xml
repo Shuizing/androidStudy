@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MusicPlayer</string>
+
+    <string name="nav_album_list">Album List</string>
+    <string name="nav_singers_list">Singers List</string>
+    <string name="nav_favourite">Favourite Songs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

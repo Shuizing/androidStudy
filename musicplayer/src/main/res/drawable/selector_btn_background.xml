@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按下状态 -->
+
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:drawable="@drawable/buttonbar_button_p" /> <!-- 背景 -->
+        </layer-list>
+    </item>
+
+    <!-- 禁用状态 -->
+    <item android:state_enabled="false">
+        <layer-list>
+            <item android:drawable="@drawable/buttonbar_button_d" />
+        </layer-list>
+    </item>
+
+    <item android:drawable="@android:color/transparent" />
+
+</selector>
