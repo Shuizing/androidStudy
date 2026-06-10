@@ -1,6 +1,12 @@
 package com.example.musicplayer.entity;
 
-public class Song {
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Song implements Serializable {
+
+
 
     private int id;
 

@@ -9,10 +9,14 @@
     <!--顶部信息区 -->
     <TextView
         android:id="@+id/tv_song_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginLeft="80dp"
+        android:gravity="center"
         android:text="Everybody Hurts"
-        android:textSize="34sp"
+        android:maxLines="1"
+        android:textSize="30sp"
         android:textColor="@color/song_tile"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,11 +25,13 @@
 
     <TextView
         android:id="@+id/tv_song_album"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:text="Avril Lavigne\nGoodbye Lullaby"
-        android:textAlignment="center"
-        android:textSize="24sp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:textSize="20sp"
         android:textColor="@color/song_album"
         android:lineSpacingMultiplier="1.2"
         app:layout_constraintTop_toBottomOf="@id/tv_song_title"
@@ -39,8 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/selector_collect_icon"
+
         android:paddingLeft="15dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toEndOf="@id/tv_song_title"
         app:layout_constraintTop_toTopOf="@id/tv_song_title"
         app:layout_constraintBottom_toBottomOf="@id/tv_song_title"
@@ -134,6 +141,7 @@
 
 
         <TextView
+            android:id="@+id/tv_songTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"

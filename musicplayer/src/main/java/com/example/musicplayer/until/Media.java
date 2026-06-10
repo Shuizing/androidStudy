@@ -70,6 +70,8 @@ public class Media {
                     song.setDuration(duration);
                     song.setPath(path);
                     song.setCollect("Y");
+                    song.setTime(formatDuration(duration));
+
                     songList.add(song);
                 }
             }
@@ -108,12 +110,22 @@ public class Media {
                     song.setArtist("未知歌手");
                     song.setAlbum("未知专辑");
                     song.setCollect("Y");
-
                     songList.add(song);
                 }
             }
         }
         return songList;
+    }
+
+
+    public static String formatDuration(long millis) {
+        if (millis <= 0) {
+            return "00:00";
+        }
+        long totalSeconds = millis / 1000;
+        long minutes = totalSeconds / 60;
+        long seconds = totalSeconds % 60;
+        return String.format("%02d:%02d", minutes, seconds);
     }
 
 }

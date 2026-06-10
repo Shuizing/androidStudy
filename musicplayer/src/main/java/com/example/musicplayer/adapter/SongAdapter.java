@@ -88,7 +88,7 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
             holder.tv_songTitle.setTextSize(26);
             holder.iv_playIcon.setImageResource(R.drawable.list_icon_play);
             //播放音乐
-            MusicPlayer.getInstance().play(song.getPath());
+//            MusicPlayer.getInstance().play(song.getPath());
             Log.i(Media.TAG, "开始播放音乐，路径： " + song.getPath());
             //设置进度条
             holder.pb_play.setVisibility(View.VISIBLE);
@@ -113,6 +113,9 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
                 notifyItemChanged(oldSelected);
             }
             notifyItemChanged(position);
+            if (listener != null) {
+                listener.onItemClick(v, position);
+            }
         });
 
     }

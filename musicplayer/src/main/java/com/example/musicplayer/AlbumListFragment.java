@@ -30,7 +30,14 @@ import java.util.List;
 
 public class AlbumListFragment extends Fragment {
 
+    private SongAdapter adapter;
 
+    // 提供给外部调用的方法
+    public void setSelectedIndex(int index) {
+        if (adapter != null) {
+            adapter.setSelectedIndex(index);
+        }
+    }
 
     // 参数键名，用于在 Bundle 中标识传递的参数
     private static final String ARG_PARAM1 = "param1";
@@ -41,6 +48,12 @@ public class AlbumListFragment extends Fragment {
     private String mParam2;
     private Context context;
     private View root;
+
+    private List<Song> songList;
+
+    public AlbumListFragment(List<Song> songList){
+        this.songList = songList;
+    }
 
     public ImageButton getBtn_back() {
         return btn_back;
@@ -111,80 +124,76 @@ public class AlbumListFragment extends Fragment {
 
         });
 
-
         // 先检查权限，再加载歌曲
-        if (checkAudioPermission()) {
+//        if (checkAudioPermission()) {
+        if(!songList.isEmpty()){
             loadSongs();
-        } else {
-            requestAudioPermission();
         }
 
-        RecyclerView recyclerView = root.findViewById(R.id.rv_song_list);
+//        } else {
+//            requestAudioPermission();
+//        }
 
-        // 创建数据列表
-        Media media = new Media();
-        List<Song> songList = media.scanMusic(getActivity().getContentResolver());
-        songList.clear();
-        if(songList.size() == 0){
-            Log.i(Media.TAG, "文件扫描歌曲");
-            songList = media.scanMusicByFile();
-        }
-
-
-        SongAdapter adapter = new SongAdapter(songList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerView.setAdapter(adapter);
         return root;
     }
 
 
     private static final int REQUEST_AUDIO_PERMISSION = 1001;
 
-    private boolean checkAudioPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            // Android 13+
-            return ContextCompat.checkSelfPermission(requireContext(),
-                    Manifest.permission.READ_MEDIA_AUDIO) == PackageManager.PERMISSION_GRANTED;
-        } else {
-            // Android 12 及以下
-            return ContextCompat.checkSelfPermission(requireContext(),
-                    Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
-        }
-    }
-
-    private void requestAudioPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            requestPermissions(new String[]{Manifest.permission.READ_MEDIA_AUDIO},
-                    REQUEST_AUDIO_PERMISSION);
-        } else {
-            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                    REQUEST_AUDIO_PERMISSION);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_AUDIO_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // 权限授予，加载歌曲
-                loadSongs();
-            } else {
-                // 权限拒绝，提示用户
-                Toast.makeText(requireContext(), "需要音频权限才能扫描歌曲", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
+//    private boolean checkAudioPermission() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//            // Android 13+
+//            return ContextCompat.checkSelfPermission(requireContext(),
+//                    Manifest.permission.READ_MEDIA_AUDIO) == PackageManager.PERMISSION_GRANTED;
+//        } else {
+//            // Android 12 及以下
+//            return ContextCompat.checkSelfPermission(requireContext(),
+//                    Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+//        }
+//    }
+//
+//    private void requestAudioPermission() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//            requestPermissions(new String[]{Manifest.permission.READ_MEDIA_AUDIO},
+//                    REQUEST_AUDIO_PERMISSION);
+//        } else {
+//            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+//                    REQUEST_AUDIO_PERMISSION);
+//        }
+//    }
+//
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (requestCode == REQUEST_AUDIO_PERMISSION) {
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                // 权限授予，加载歌曲
+//                loadSongs();
+//            } else {
+//                // 权限拒绝，提示用户
+//                Toast.makeText(requireContext(), "需要音频权限才能扫描歌曲", Toast.LENGTH_LONG).show();
+//            }
+//        }
+//    }
 
     private void loadSongs() {
         RecyclerView recyclerView = root.findViewById(R.id.rv_song_list);
-        Media media = new Media();
-        List<Song> songList = media.scanMusic(requireActivity().getContentResolver());
-        if (songList.isEmpty()) {
-            songList = media.scanMusicByFile();
-        }
+//        Media media = new Media();
+//         songList = media.scanMusic(requireActivity().getContentResolver());
+//        if (songList.isEmpty()) {
+//            songList = media.scanMusicByFile();
+//        }
         SongAdapter adapter = new SongAdapter(songList);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
+
+        // 点击歌曲 → 播放 + 同步到 PlayerFragment
+        adapter.setOnItemClickListener((view, position) -> {
+            // 通知 PlayerFragment 切歌
+            if (getActivity() instanceof MainActivity) {
+                ((MainActivity) getActivity()).playSongAt(position);
+            }
+            adapter.setSelectedIndex(position);  // 更新列表选中状态
+        });
     }
-}
+    }

@@ -1,7 +1,11 @@
 package com.example.musicplayer.until;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.util.Log;
 import android.widget.Toast;
+
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.io.IOException;
 
@@ -27,9 +31,21 @@ public class MusicPlayer {
      * 播放音乐
      * @param path 文件路径
      */
-    public void play(String path) {
+    public boolean play(String path) {
+
+        // 重复点击应暂停
         if (path.equals(currentPath) && mediaPlayer.isPlaying()) {
-            return;
+            Log.i(Media.TAG,"MusicPlayer currentpath:"+ currentPath  +"    重复点击暂停isPlaying :" + mediaPlayer.isPlaying());
+            mediaPlayer.pause();
+            Log.i(Media.TAG,"重复点击isPlaying:" + mediaPlayer.isPlaying());
+            return mediaPlayer.isPlaying();
+        }
+
+        if (path.equals(currentPath) && !mediaPlayer.isPlaying()){
+            Log.i(Media.TAG,"MusicPlayer currentpath:"+ currentPath  +"    重复点击播放isPlaying :" + mediaPlayer.isPlaying());
+            mediaPlayer.start();
+            Log.i(Media.TAG,"重复点击isPlaying:" + mediaPlayer.isPlaying());
+            return mediaPlayer.isPlaying();
         }
 
         try {
@@ -38,11 +54,12 @@ public class MusicPlayer {
             mediaPlayer.prepare();
             mediaPlayer.start();
             currentPath = path;
+            return mediaPlayer.isPlaying();
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
     }
-
 
     /**
      * 暂停

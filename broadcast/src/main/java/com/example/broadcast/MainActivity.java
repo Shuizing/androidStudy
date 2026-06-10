@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         //注册本地广播
         myLocalReceiver = new MyLocalReceiver(this);
         localBroadcastManager.registerReceiver(myLocalReceiver, new IntentFilter(LOCAL_ACTION));
+
     }
 
     @Override
