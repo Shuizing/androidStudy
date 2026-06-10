@@ -10,4 +10,8 @@
     <color name="song_album">#505050</color>
     <color name="song_time">#282828</color>
 
+    <color name="album_default_textColor">#646464</color>
+
+
+
 </resources>

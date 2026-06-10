@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:background="@drawable/sidebar_area"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <!-- 搜索栏区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="16dp">
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@drawable/sidebar_search_area">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingLeft="12dp"
+                android:paddingRight="36dp" />
+
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/selector_search" />
+
+        </FrameLayout>
+       </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/selector_siderbar_button"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_siderbar_icon_list"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:layout_gravity="center_vertical"
+            android:textColor="@drawable/selector_siderbar_text"
+            android:textSize="25sp"
+            android:layout_marginLeft="60dp" />
+
+    </FrameLayout>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:background="@drawable/selector_siderbar_button"
+        android:layout_gravity="center_vertical"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_siderbar_icon_album"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Album List"
+            android:layout_gravity="center_vertical"
+            android:textColor="@drawable/selector_siderbar_text"
+            android:textSize="25sp"
+            android:layout_marginLeft="60dp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:background="@drawable/selector_siderbar_button"
+        android:layout_gravity="center_vertical"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_siderbar_icon_singer"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Singers List"
+            android:layout_gravity="center_vertical"
+            android:textColor="@drawable/selector_siderbar_text"
+            android:textSize="25sp"
+            android:layout_marginLeft="60dp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:background="@drawable/selector_siderbar_button"
+        android:layout_gravity="center_vertical"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_siderbar_icon_collect"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favourite Songs"
+            android:layout_gravity="center_vertical"
+            android:textColor="@drawable/selector_siderbar_text"
+            android:textSize="25sp"
+            android:layout_marginLeft="60dp" />
+
+    </FrameLayout>
+
+
+</LinearLayout>

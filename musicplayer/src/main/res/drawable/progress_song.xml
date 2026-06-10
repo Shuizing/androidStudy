@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 背景轨道 -->
+    <item android:id="@android:id/background">
+        <bitmap
+            android:src="@drawable/list_progressbar_area"
+            android:tileMode="repeat" />
+    </item>
+
+    <!-- 进度填充，用 clip 实现从左到右裁剪 -->
+    <item android:id="@android:id/progress">
+        <clip
+            android:clipOrientation="horizontal"
+            android:gravity="left">
+            <bitmap
+                android:src="@drawable/list_progressbar"
+                android:tileMode="repeat" />
+        </clip>
+    </item>
+
+</layer-list>

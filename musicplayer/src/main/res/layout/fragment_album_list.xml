@@ -8,7 +8,6 @@
     tools:context=".AlbumListFragment">
 
 
-    <!-- 顶栏：返回 + 标题 + 刷新   -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -56,8 +55,11 @@
         android:layout_weight="1"
         android:clipToPadding="false"
         android:overScrollMode="never"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@drawable/scrollbar_albumlist"
+        android:scrollbarSize="4dp"
+        android:scrollbarFadeDuration="500"
         tools:listitem="@layout/item_song" />
-
 
 
 </LinearLayout>

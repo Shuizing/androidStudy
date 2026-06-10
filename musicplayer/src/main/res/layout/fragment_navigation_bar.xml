@@ -13,9 +13,10 @@
         <!-- 1. 底层：放置整张背景图 -->
         <ImageView
             android:id="@+id/bg_image"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:src="@drawable/buttonbar_area" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/buttonbar_area"
+            android:scaleType="fitXY" />
 
         <!-- 2. 上层：放置4个透明按钮 -->
         <LinearLayout
@@ -34,7 +35,7 @@
                 android:padding="10dp" />
 
             <ImageButton
-                android:id="@+id/btn_id3"
+                android:id="@+id/btn_player"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -45,7 +46,7 @@
 
 
             <ImageButton
-                android:id="@+id/btn_list"
+                android:id="@+id/btn_albumlist"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -54,15 +55,6 @@
                 android:scaleType="centerInside"
                 android:padding="10dp" />
 
-
-
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_eq"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:background="@drawable/volume_slider_bg" />-->
 
             <ImageButton
                 android:id="@+id/btn_eq"

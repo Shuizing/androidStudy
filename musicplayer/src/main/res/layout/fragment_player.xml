@@ -148,11 +148,12 @@
             android:layout_gravity="center"
             android:layout_margin="80dp"
             android:src="@drawable/id3_artwork" />
-
+<!--        android:src="@drawable/selector_button_pause"-->
         <ImageButton
+            android:id="@+id/ibtn_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/selector_button_pause"
+            android:src="@drawable/selector_id3_button_play"
             android:scaleX="0.7"
             android:scaleY="0.7"
             android:layout_gravity="center"
